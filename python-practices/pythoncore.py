@@ -66,30 +66,49 @@ for order in orders:
 
 # INHERITANCE
 
-class Product:
-    def __init__(self, id, title, price):
-        self.id = id
-        self.title = title
-        self.price = price
+# class Product:
+#     def __init__(self, id, title, price):
+#         self.id = id
+#         self.title = title
+#         self.price = price
 
-    def display(self):
-        print(f"ID: {self.id}")
-        print(f"Title: {self.title}")
-        print(f"Price: {self.price}")
-
-
-class ElectronicProduct(Product):
-    def __init__(self, id, title, price, warranty, manufacture):
-        super().__init__(id, title, price)
-        self.warranty = warranty
-        self.manufacture = manufacture
-
-    def display(self):
-        super().display()  
-        print(f"Warranty: {self.warranty} years")
-        print(f"Manufacture: {self.manufacture}")
+#     def display(self):
+#         print(f"ID: {self.id}")
+#         print(f"Title: {self.title}")
+#         print(f"Price: {self.price}")
 
 
-prod1 = ElectronicProduct(1, "Oppo", 7899, 4, "Oppo")
-prod1.display()
+# class ElectronicProduct(Product):
+#     def __init__(self, id, title, price, warranty, manufacture):
+#         super().__init__(id, title, price)
+#         self.warranty = warranty
+#         self.manufacture = manufacture
 
+#     def display(self):
+#         super().display()  
+#         print(f"Warranty: {self.warranty} years")
+#         print(f"Manufacture: {self.manufacture}")
+
+
+# prod1 = ElectronicProduct(1, "Oppo", 7899, 4, "Oppo")
+# prod1.display()
+
+class BankAccount:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+    def deposit(self,amt):
+        self.balance = self.balance + amt
+    def withdraw(self,amt):
+        if amt > self.balance:
+            print("Insufficient balance")
+        self.balance = self.balance - amt
+    def display_info(self):
+        print(f"Name: {self.name}")
+        print(f"Balance: {self.balance}")
+
+
+acc = BankAccount("Sinan", 1000)
+acc.deposit(500)
+acc.withdraw(200)
+acc.display_info()
