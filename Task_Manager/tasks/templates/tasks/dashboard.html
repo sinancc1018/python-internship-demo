@@ -1,0 +1,48 @@
+{% extends 'tasks/base.html' %}  
+<!-- This page uses base.html as the main layout -->
+
+{% block content %} 
+<!-- Main content section starts here -->
+
+<!-- Page title -->
+<h2 class="mb-4">Dashboard</h2> 
+
+<div class="row"> 
+
+    <!-- Total tasks card -->
+    <div class="col-md-4"> 
+        <div class="card text-bg-primary mb-3 shadow"> 
+            <div class="card-body">
+                <h5>Total Tasks</h5>
+                <p class="fs-3">{{ total_tasks }}</p>  <!-- Shows total tasks -->
+            </div> 
+        </div> 
+    </div> 
+
+    <!-- Completed tasks card -->
+    <div class="col-md-4"> 
+        <div class="card text-bg-success mb-3 shadow"> 
+            <div class="card-body">
+                <h5>Completed Tasks</h5>
+                <p class="fs-3">{{ completed_tasks }}</p>  <!-- Shows completed tasks -->
+            </div> 
+        </div> 
+    </div> 
+
+    <!-- Pending tasks card -->
+    <div class="col-md-4"> 
+        <div class="card text-bg-warning mb-3 shadow"> 
+            <div class="card-body">
+                <h5>Pending Tasks</h5>
+                <p class="fs-3">{{ pending_tasks }}</p>  <!-- Shows pending tasks -->
+            </div> 
+        </div> 
+    </div> 
+
+</div> 
+
+<!-- Buttons for navigation -->
+<a href="{% url 'task_create' %}" class="btn btn-dark">Create New Task</a> 
+<a href="{% url 'task_list' %}" class="btn btn-outline-dark">View All Tasks</a> 
+
+{% endblock %}

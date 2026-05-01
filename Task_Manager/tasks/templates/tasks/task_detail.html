@@ -1,0 +1,31 @@
+{% extends 'tasks/base.html' %}  
+<!-- Uses base.html as the main layout -->
+
+{% block content %} 
+<!-- Main content starts -->
+
+<!-- Card to display task details -->
+<div class="card shadow"> 
+    <div class="card-body"> 
+
+        <!-- Task title -->
+        <h2>{{ task.title }}</h2> 
+
+        <!-- Task description -->
+        <p><strong>Description:</strong> {{ task.description }}</p> 
+
+        <!-- Task status -->
+        <p><strong>Status:</strong> {{ task.status }}</p> 
+
+        <!-- Task due date -->
+        <p><strong>Due Date:</strong> {{ task.due_date }}</p> 
+
+        <!-- Action buttons -->
+        <a href="{% url 'task_update' task.id %}" class="btn btn-warning">Edit</a> 
+        <a href="{% url 'task_delete' task.id %}" class="btn btn-danger">Delete</a> 
+        <a href="{% url 'task_list' %}" class="btn btn-secondary">Back</a> 
+
+    </div> 
+</div> 
+
+{% endblock %}
